@@ -24,8 +24,8 @@ const iconLinks: IconLinkConfig[] = [
 ];
 
 const imageLinks: ImageLinkConfig[] = [
-	['speedrun.com.png', 'www.speedrun.com/user/Hoishin'],
-	['nico.png', 'com.nicovideo.jp/community/co3256521'],
+	['speedrun.com.webp', 'www.speedrun.com/user/Hoishin'],
+	['nico.webp', 'com.nicovideo.jp/community/co3256521'],
 ];
 
 const iconStyle: CSSProperties = {
