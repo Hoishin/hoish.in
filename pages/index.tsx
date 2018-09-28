@@ -1,4 +1,4 @@
-import React, {CSSProperties} from 'react';
+import React from 'react';
 
 import Head from 'next/head';
 import 'modern-normalize/modern-normalize.css';
