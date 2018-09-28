@@ -1,7 +1,7 @@
 import React from 'react';
 
 import 'modern-normalize/modern-normalize.css';
-import '../styles.css'
+import '../styles.css';
 import Head from 'next/head';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -37,7 +37,7 @@ const IconLink: React.StatelessComponent<{iconLink: IconLinkConfig}> = ({
 	iconLink,
 }) => (
 	<Link url={iconLink[1]}>
-			<FontAwesomeIcon icon={iconLink[0]} size='4x'  />
+		<FontAwesomeIcon icon={iconLink[0]} size="4x" />
 	</Link>
 );
 
@@ -45,7 +45,11 @@ const ImageLink: React.StatelessComponent<{imageLink: ImageLinkConfig}> = ({
 	imageLink,
 }) => (
 	<Link url={imageLink[1]}>
-		<img src={`/static/${imageLink[0]}`} className="icon" />
+		<img
+			src={`/static/${imageLink[0]}`}
+			alt={imageLink[1].split('/')[0]}
+			className="icon"
+		/>
 	</Link>
 );
 
@@ -62,6 +66,10 @@ const Index: React.StatelessComponent = () => (
 				href="/static/hoisin-sauce.jpeg"
 			/>
 			<title>Hoishin</title>
+			<meta
+				name="Description"
+				content="Hoishin, Web Engineer, RPG Speedrunner"
+			/>
 		</Head>
 		<div id="container">
 			<h1>Hoishin</h1>
