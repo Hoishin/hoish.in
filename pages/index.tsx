@@ -71,6 +71,7 @@ const Index: React.StatelessComponent = () => (
 				type="image/jpeg"
 				href="/static/hoisin-sauce.jpeg"
 			/>
+			<title>Hoishin</title>
 		</Head>
 		<div id="container">
 			<h1>Hoishin</h1>
