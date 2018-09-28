@@ -72,6 +72,15 @@ const Index: React.StatelessComponent = () => (
 				href="/static/hoisin-sauce.jpeg"
 			/>
 			<title>Hoishin</title>
+			<style>{`
+				#container {
+					display: grid;
+					align-content: center;
+					justify-content: center;
+					justify-items: center;
+				}
+			`}
+			</style>
 		</Head>
 		<div id="container">
 			<h1>Hoishin</h1>
@@ -102,14 +111,6 @@ const Index: React.StatelessComponent = () => (
 				<ImageLink imageLink={imageLink} />
 			))}
 		</div>
-		<style jsx>{`
-			#container {
-				display: grid;
-				align-content: center;
-				justify-content: center;
-				justify-items: center;
-			}
-		`}</style>
 	</div>
 );
 
