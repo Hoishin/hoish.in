@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Head from 'next/head';
 import 'modern-normalize/modern-normalize.css';
+import '../styles.css'
+import Head from 'next/head';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
 	faTwitch,
@@ -10,8 +11,6 @@ import {
 	faGithub,
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-
-const ICON_SIZE = 50;
 
 type IconLinkConfig = [IconDefinition, string];
 type ImageLinkConfig = [string, string];
@@ -63,24 +62,6 @@ const Index: React.StatelessComponent = () => (
 				href="/static/hoisin-sauce.jpeg"
 			/>
 			<title>Hoishin</title>
-			<style jsx global>
-				{`
-					#container {
-						display: grid;
-						align-content: center;
-						justify-content: center;
-						justify-items: center;
-					}
-
-					.no-color {
-						color: inherit;
-					}
-
-					.icon {
-						height: ${ICON_SIZE}px;
-					}
-				`}
-			</style>
 		</Head>
 		<div id="container">
 			<h1>Hoishin</h1>

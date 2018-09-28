@@ -1,0 +1,14 @@
+#container {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	justify-items: center;
+}
+
+.no-color {
+	color: inherit;
+}
+
+.icon {
+	height: 50px;
+}
