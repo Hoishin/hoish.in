@@ -28,17 +28,8 @@ const imageLinks: ImageLinkConfig[] = [
 	['nico.webp', 'com.nicovideo.jp/community/co3256521'],
 ];
 
-const iconStyle: CSSProperties = {
-	height: ICON_SIZE,
-	width: ICON_SIZE,
-};
-
-const imageStyle: CSSProperties = {
-	height: ICON_SIZE,
-};
-
 const Link: React.StatelessComponent<{url: string}> = ({url, children}) => (
-	<a href={`https://${url}`} target="new" style={{color: 'inherit'}}>
+	<a className="no-color" href={`https://${url}`} target="new">
 		{children}
 	</a>
 );
@@ -47,7 +38,7 @@ const IconLink: React.StatelessComponent<{iconLink: IconLinkConfig}> = ({
 	iconLink,
 }) => (
 	<Link url={iconLink[1]}>
-		<FontAwesomeIcon icon={iconLink[0]} style={iconStyle} />
+			<FontAwesomeIcon icon={iconLink[0]} size='4x'  />
 	</Link>
 );
 
@@ -55,7 +46,7 @@ const ImageLink: React.StatelessComponent<{imageLink: ImageLinkConfig}> = ({
 	imageLink,
 }) => (
 	<Link url={imageLink[1]}>
-		<img src={`/static/${imageLink[0]}`} style={imageStyle} />
+		<img src={`/static/${imageLink[0]}`} className="icon" />
 	</Link>
 );
 
@@ -72,14 +63,23 @@ const Index: React.StatelessComponent = () => (
 				href="/static/hoisin-sauce.jpeg"
 			/>
 			<title>Hoishin</title>
-			<style>{`
-				#container {
-					display: grid;
-					align-content: center;
-					justify-content: center;
-					justify-items: center;
-				}
-			`}
+			<style jsx global>
+				{`
+					#container {
+						display: grid;
+						align-content: center;
+						justify-content: center;
+						justify-items: center;
+					}
+
+					.no-color {
+						color: inherit;
+					}
+
+					.icon {
+						height: ${ICON_SIZE}px;
+					}
+				`}
 			</style>
 		</Head>
 		<div id="container">
