@@ -6,8 +6,7 @@
 		"build": "next build",
 		"start": "next start",
 		"export": "next export",
-		"test": "tsc",
-		"deploy": "rsync --archive --recursive --compress --partial --progress --delete --quiet -e \"ssh -o StrictHostKeyChecking=no\" out/ ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}"
+		"test": "tsc"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.4",
