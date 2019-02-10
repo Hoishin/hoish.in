@@ -15,18 +15,6 @@ import {
 type IconLinkConfig = [IconDefinition, string];
 type ImageLinkConfig = [string, string];
 
-const iconLinks: IconLinkConfig[] = [
-	[faTwitch, 'www.twitch.tv/hoishin'],
-	[faTwitter, 'twitter.com/hoishinxii'],
-	[faGithub, 'github.com/hoishin'],
-	[faYoutube, 'www.youtube.com/channel/UCRTWpFlTJCC613pNSIf3RKQ'],
-];
-
-const imageLinks: ImageLinkConfig[] = [
-	['speedrun.com.webp', 'www.speedrun.com/user/Hoishin'],
-	['nico.webp', 'com.nicovideo.jp/community/co3256521'],
-];
-
 const Link: React.StatelessComponent<{url: string}> = ({url, children}) => (
 	<a className="no-color" href={`https://${url}`} target="new">
 		{children}
@@ -93,12 +81,14 @@ const Index: React.StatelessComponent = () => (
 					PostgreSQL
 				</li>
 			</ul>
-			{iconLinks.map(iconLink => (
-				<IconLink iconLink={iconLink} />
-			))}
-			{imageLinks.map(imageLink => (
-				<ImageLink imageLink={imageLink} />
-			))}
+			<IconLink iconLink={[faTwitter, 'twitter.com/hoishinxii']} />
+			<IconLink iconLink={[faGithub, 'github.com/hoishin']} />
+			<ImageLink
+				imageLink={[
+					'speedrun.com.webp',
+					'www.speedrun.com/user/Hoishin',
+				]}
+			/>
 		</div>
 	</div>
 );
