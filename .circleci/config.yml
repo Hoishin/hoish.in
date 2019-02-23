@@ -1,10 +1,11 @@
 version: 2
 jobs:
     build:
-      docker:
-        - image: circleci/node:10
-      steps:
-        - checkout
-        - run: yarn install --frozen-lockfile
-        - run: yarn build && yarn export
-        - run: yarn deploy
+        docker:
+            - image: circleci/node:10
+        steps:
+            - run: apt-get -y install rsync
+            - checkout
+            - run: yarn install --frozen-lockfile
+            - run: yarn build && yarn export
+            - run: yarn deploy
