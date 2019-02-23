@@ -9,13 +9,16 @@ jobs:
             - checkout
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
+            - persist_to_workspace:
+                root: workspace
+                paths:
+                    - out
     deploy:
         machine:
             enabled: true
         steps:
-            # - add_ssh_keys:
-            #     fingerprints:
-            #         - "e5:64:d1:e6:b3:4b:e8:ad:8e:2a:fd:40:c4:6f:a2:4a"
+            - attach_workspace:
+                at: workspace
             - run: rsync -e "ssh -o StrictHostKeyChecking=no" -ahv --delete ./out/* ${DEPLOY_DEST}
 
 workflows:
