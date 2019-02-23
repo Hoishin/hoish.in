@@ -8,4 +8,4 @@ jobs:
             - checkout
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
-            - run: yarn deploy
+            - run: yarn deploy -e "ssh -o StrictHostKeyChecking=no"
