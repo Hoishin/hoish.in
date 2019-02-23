@@ -10,15 +10,15 @@ jobs:
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
             - persist_to_workspace:
-                root: out
+                root: '.'
                 paths:
-                    - '*'
+                    - out
     deploy:
         machine:
             enabled: true
         steps:
             - attach_workspace:
-                at: out
+                at: '.'
             - run: rsync -e "ssh -o StrictHostKeyChecking=no" -ahv --delete ./out/* ${DEPLOY_DEST}
 
 workflows:
