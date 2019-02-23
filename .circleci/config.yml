@@ -4,7 +4,7 @@ jobs:
         docker:
             - image: circleci/node:10
         steps:
-            - run: apt-get -y install rsync
+            - run: apt-get update && apt-get -y install rsync
             - checkout
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
