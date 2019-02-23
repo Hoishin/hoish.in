@@ -12,3 +12,9 @@ jobs:
         steps:
             - run: ls -al
             - run: rsync -ahv --delete ./out/* hoish.in:/var/www/hoish.in/
+workflows:
+    version: 2
+    build-and-deploy:
+        jobs:
+            - build
+            - deploy
