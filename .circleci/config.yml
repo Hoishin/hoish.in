@@ -4,11 +4,10 @@ jobs:
         docker:
             - image: node:10
         steps:
-            - run: apt-get update && apt-get -y install rsync
             - checkout
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
-            - add_ssh_keys:
-                fingerprints:
-                  - "e5:64:d1:e6:b3:4b:e8:ad:8e:2a:fd:40:c4:6f:a2:4a"
-            - run: yarn deploy -e "ssh -o StrictHostKeyChecking=no"
+    deploy:
+        steps:
+            - run: ls -al
+            - run: rsync -ahv --delete ./out/* hoish.in:/var/www/hoish.in/
