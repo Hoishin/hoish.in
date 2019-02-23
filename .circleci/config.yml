@@ -19,8 +19,7 @@ jobs:
         steps:
             - attach_workspace:
                 at: out
-            - run: find out
-            # - run: rsync -e "ssh -o StrictHostKeyChecking=no" -ahv --delete ./out/* ${DEPLOY_DEST}
+            - run: rsync -e "ssh -o StrictHostKeyChecking=no" -ahv --delete ./out/* ${DEPLOY_DEST}
 
 workflows:
     version: 2
