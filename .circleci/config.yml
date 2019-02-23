@@ -8,14 +8,14 @@ jobs:
             - run: yarn install --frozen-lockfile
             - run: yarn build && yarn export
             - persist_to_workspace:
-                root: /tmp/workspace
+                root: /tmp
                 paths:
                     - out
     deploy:
         machine: true
         steps:
-            - run: ls -al /tmp/workspace
-            - run: rsync -ahv --delete /tmp/workspace/out/* hoish.in:/var/www/hoish.in/
+            - run: ls -al /tmp
+            - run: rsync -ahv --delete /tmp/out/* hoish.in:/var/www/hoish.in/
 workflows:
     version: 2
     build-and-deploy:
