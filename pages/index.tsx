@@ -5,11 +5,9 @@ import '../styles.css';
 import Head from 'next/head';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-	faTwitch,
 	IconDefinition,
 	faTwitter,
 	faGithub,
-	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 type IconLinkConfig = [IconDefinition, string];
